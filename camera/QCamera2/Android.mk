@@ -12,13 +12,6 @@ LOCAL_PATH:= $(call my-dir)
 
 include $(CLEAR_VARS)
 
-LOCAL_CLANG_CFLAGS += \
-        -Wno-error=unused-private-field \
-        -Wno-error=strlcpy-strlcat-size \
-        -Wno-error=gnu-designator \
-        -Wno-error=unused-variable \
-        -Wno-error=format
-
 LOCAL_COPY_HEADERS_TO := qcom/camera
 LOCAL_COPY_HEADERS := QCameraFormat.h
 
@@ -105,7 +98,7 @@ LOCAL_C_INCLUDES := \
 
 #HAL 1.0 Include paths
 LOCAL_C_INCLUDES += \
-        $(call project-path-for,qcom-camera)/QCamera2/HAL
+        $(LOCAL_PATH)/HAL
 
 ifeq ($(TARGET_COMPILE_WITH_MSM_KERNEL),true)
 LOCAL_C_INCLUDES += $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include
