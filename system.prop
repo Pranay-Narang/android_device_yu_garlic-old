@@ -125,7 +125,6 @@ vidc.enc.dcvs.extra-buff-count=2
 ro.vendor.gt_library=libqti-gt.so
 ro.vendor.at_library=libqti-at.so
 ro.vendor.extension_library=libqti-perfd-client.so
-ro.sys.fw.dex2oat_thread_count=4
 ro.config.swap=true
 ro.config.zram=false
 ro.core_ctl_max_cpu=4

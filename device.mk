@@ -166,6 +166,12 @@ PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-service \
     android.hardware.drm@1.0-service.widevine
 
+# Use all Cores in dex2oat
+PRODUCT_PROPERTY_OVERRIDES += \
+    dalvik.vm.boot-dex2oat-threads=8 \
+    dalvik.vm.dex2oat-threads=8 \
+    dalvik.vm.image-dex2oat-threads=8
+
 # Ebtables
 PRODUCT_PACKAGES += \
     ebtables \
