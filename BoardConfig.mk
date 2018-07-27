@@ -257,3 +257,6 @@ WIFI_DRIVER_FW_PATH_STA := "sta"
 WPA_SUPPLICANT_VERSION := VER_0_8_X
 # Inherit from the proprietary version
 -include vendor/yu/garlic/BoardConfigVendor.mk
+
+# Prebuilt QTI
+TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
