@@ -48,6 +48,7 @@ TARGET_KERNEL_CONFIG := lineage_garlic_defconfig
 TARGET_KERNEL_SOURCE := kernel/yu/msm8937
 TARGET_KERNEL_CLANG_COMPILE := true
 TARGET_KERNEL_CLANG_VERSION := 7.0.2
+KBUILD_COMPILER_STRING := $($(TARGET_KERNEL_CLANG_PATH)/clang --version | head -n 1 | perl -pe 's/\(http.*?\)//gs' | sed -e 's/  */ /g' -e 's/[[:space:]]*$//')
 
 # ANT
 BOARD_ANT_WIRELESS_DEVICE := "vfs-prerelease"
