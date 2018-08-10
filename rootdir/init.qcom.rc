@@ -74,17 +74,17 @@ on post-fs
 
 on post-fs
     start qseecomd
-    
-    # CPU-Sets Configuration:
+
     write /dev/cpuset/top-app/cpus 0-7
     write /dev/cpuset/top-app/boost/cpus 4-7
-    write /dev/cpuset/foreground/cpus 0-7
-    write /dev/cpuset/background/cpus 4-7
-    write /dev/cpuset/system-background/cpus 4-7
+    write /dev/cpuset/foreground/cpus 0-6
+    write /dev/cpuset/background/cpus 0-1
+    write /dev/cpuset/system-background/cpus 0-3
 
-    # Add a CPU-Set for Camera Daemon:
+    # Add a CPU-Set for the Camera Daemon
+    # We want all Cores for Camera
     mkdir /dev/cpuset/camera-daemon
-    write /dev/cpuset/camera-daemon/cpus 0-7
+    write /dev/cpuset/camera-daemon/cpus 0-3
     write /dev/cpuset/camera-daemon/mems 0
     chown system system /dev/cpuset/camera-daemon
     chown system system /dev/cpuset/camera-daemon/tasks
