@@ -75,22 +75,6 @@ on post-fs
 on post-fs
     start qseecomd
 
-    write /dev/cpuset/top-app/cpus 0-7
-    write /dev/cpuset/top-app/boost/cpus 4-7
-    write /dev/cpuset/foreground/cpus 0-6
-    write /dev/cpuset/foreground/boost/cpus 0-6
-    write /dev/cpuset/background/cpus 0-1
-    write /dev/cpuset/system-background/cpus 0-3
-
-    # Add a CPU-Set for the Camera Daemon
-    # We want all Cores for Camera
-    mkdir /dev/cpuset/camera-daemon
-    write /dev/cpuset/camera-daemon/cpus 0-3
-    write /dev/cpuset/camera-daemon/mems 0
-    chown system system /dev/cpuset/camera-daemon
-    chown system system /dev/cpuset/camera-daemon/tasks
-    chmod 0664 /dev/cpuset/camera-daemon/tasks
-
 # msm specific files that need to be created on /data
 on post-fs-data
     mkdir /data/tombstones 0771 system system
@@ -667,7 +651,7 @@ service loc_launcher /vendor/bin/loc_launcher
     #loc_launcher will start as root and set its uid to gps
     class late_start
     group gps inet diag wifi
-    writepid /dev/stune/background/tasks /dev/cpuset/system-background/tasks
+    writepid /dev/stune/background/tasks
 
 service qcom-sh /vendor/bin/init.qcom.sh
     class late_start
@@ -758,7 +742,7 @@ service thermal-engine /vendor/bin/thermal-engine
     socket thermal-recv-passive-client stream 0666 system system
     socket thermal-send-rule stream 0660 system system
     group root
-    writepid /dev/stune/background/tasks /dev/cpuset/system-background/tasks
+    writepid /dev/stune/background/tasks
 
 service time_daemon /vendor/bin/time_daemon
     class main
@@ -856,8 +840,8 @@ service per_proxy /vendor/bin/pm-proxy
     class core
     user system
     group system
-    writepid /dev/cpuset/system-background/tasks /dev/stune/background/tasks
     disabled
+    writepid /dev/cpuset/system-background/tasks /dev/stune/background/tasks
 
 on property:init.svc.per_mgr=running
     start per_proxy
