@@ -112,6 +112,11 @@ PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.0-service
 
 # Camera
+PRODUCT_PACKAGES += \
+    camera.msm8937 \
+    libshim_libmmcamera \
+    Camera2
+
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/camera/camera_config.xml:system/etc/camera/camera_config.xml \
     $(LOCAL_PATH)/configs/camera/csidtg_camera.xml:system/etc/camera/csidtg_camera.xml \
@@ -123,6 +128,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
     camera.device@3.2-impl \
+    libmm-qcamera \
     vendor.qti.hardware.camera.device@1.0 \
     vendor.qti.hardware.camera.device@1.0_vendor
 
