@@ -1,7 +1,7 @@
 # Fingerprint 
 /dev/goodix_fp                                                  u:object_r:goodix_device:s0
-/dev/elan_fp													u:object_r:elan_device:s0
-/(vendor|system/vendor)/bin/gx_fpd                  			u:object_r:goodix_exec:s0
+/dev/elan_fp                                                    u:object_r:elan_device:s0
+/(vendor|system/vendor)/bin/gx_fpd                              u:object_r:goodix_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.0-service-custom u:object_r:hal_fingerprint_default_exec:s0
 
 # Fingerprint data
@@ -9,7 +9,7 @@
 /persist/data/fingerprint/(/.*)?                                u:object_r:fingerprintd_data_file:s0
 
 # Radio
-/vendor/radio/qcril_database/qcril.db                          	u:object_r:nv_data_file:s0
+/vendor/radio/qcril_database/qcril.db                           u:object_r:nv_data_file:s0
 
 # Persist partition
 /dev/block/platform/soc/7824900\.sdhci/by-name/persist          u:object_r:persist_block_device:s0
