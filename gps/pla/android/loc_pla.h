@@ -1,4 +1,4 @@
-/* Copyright (c) 2015, 2017 The Linux Foundation. All rights reserved.
+/* Copyright (c) 2014, The Linux Foundation. All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are
@@ -9,7 +9,7 @@
  *       copyright notice, this list of conditions and the following
  *       disclaimer in the documentation and/or other materials provided
  *       with the distribution.
- *     * Neither the name of The Linux Foundation, nor the names of its
+ *     * Neither the name of The Linux Foundation nor the names of its
  *       contributors may be used to endorse or promote products derived
  *       from this software without specific prior written permission.
  *
@@ -24,25 +24,35 @@
  * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
  * OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
  * IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
- *
  */
 
-#ifndef __INDEXFACTORY_H__
-#define __INDEXFACTORY_H__
+#ifndef __LOC_PLA__
+#define __LOC_PLA__
 
-#include <IClientIndex.h>
-#include <IDataItemIndex.h>
+#ifdef __cplusplus
+#include <utils/SystemClock.h>
+#define uptimeMillis android::uptimeMillis
+#endif
 
-namespace loc_core
-{
-template <typename CT, typename DIT>
-class IndexFactory {
+#ifdef __cplusplus
+extern "C" {
+#endif
 
-public:
-    static IClientIndex <CT, DIT> * createClientIndex ();
-    static IDataItemIndex <CT, DIT> * createDataItemIndex ();
-};
+#include <cutils/properties.h>
+#include <cutils/threads.h>
+#include <cutils/sched_policy.h>
 
-} // namespace loc_core
+#define LOC_PATH_GPS_CONF_STR      "/vendor/etc/gps.conf"
+#define LOC_PATH_IZAT_CONF_STR     "/vendor/etc/izat.conf"
+#define LOC_PATH_FLP_CONF_STR      "/vendor/etc/flp.conf"
+#define LOC_PATH_LOWI_CONF_STR     "/vendor/etc/lowi.conf"
+#define LOC_PATH_SAP_CONF_STR      "/vendor/etc/sap.conf"
+#define LOC_PATH_APDR_CONF_STR     "/vendor/etc/apdr.conf"
+#define LOC_PATH_XTWIFI_CONF_STR   "/vendor/etc/xtwifi.conf"
+#define LOC_PATH_QUIPC_CONF_STR    "/vendor/etc/quipc.conf"
 
-#endif // #ifndef __INDEXFACTORY_H__
+#ifdef __cplusplus
+}
+#endif /*__cplusplus */
+
+#endif /* __LOC_PLA__ */
