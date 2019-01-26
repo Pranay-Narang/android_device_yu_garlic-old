@@ -46,7 +46,6 @@ static void fp_prop()
 
     char fp_drv[50];
     memset(fp_drv, 0, sizeof(fp_drv));
-    int result = read(fd, fp_drv, sizeof(fp_drv));
 
     if (strcmp(fp_drv, "elan_fp") == 0) {
         property_set("persist.sys.fp.goodix", "0");
