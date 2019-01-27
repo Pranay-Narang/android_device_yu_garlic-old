@@ -581,7 +581,7 @@ vendor/radio/qcril_database/qcril.db|6c0c6c469c7991a427e3c4f2aeb4cbd7fd431f70
 vendor/lib/libmdmdetect.so|7cf005565c5fe901ca8a3532367c6434e9018f06
 
 # Radio - IMS - from Wiko View 2
--app/ims/ims.apk|5237f671d99afc9957b554f7484de3b36d51ce92
+-priv-app/ims/ims.apk
 -app/imssettings/imssettings.apk|bd3dfb8b80b9951985a4b5c8bb16e7939180114d
 -app/radioconfig/radioconfig.apk|a87bc681a70a22ca115fdb1aa244ff334540f32b
 -app/uceShimService/uceShimService.apk|8c0bce6c33b8145b42e02655f43472979fafb570
