@@ -650,10 +650,10 @@ vendor/etc/init/vendor.qti.hardware.tui_comm@1.0-service-qti.rc|2cfc563d7e157937
 vendor/lib/vendor.qti.hardware.tui_comm@1.0_vendor.so|084401d7342e7cbec87a48e10e893465bedb0512
 vendor/lib64/vendor.qti.hardware.tui_comm@1.0_vendor.so|ef014b7a495b0c8f5df4b469269d91be2456cfdd
 
-# Widevine - from Wiko View 2
-vendor/bin/hw/android.hardware.drm@1.0-service.widevine|41d83470a9d2818162124045a285643b8b34f3dd
-vendor/etc/init/android.hardware.drm@1.0-service.widevine.rc|51a3168a0dbc064d78ee11ca83614c0cd2e6daa5
-vendor/lib/libwvhidl.so|d1a8b93dbea9fa550a5e17c6304702c522af4f2b
+# Widevine DRM - from daisy - PKQ1.180917.001.V10.0.2.0.PDLMIFJ
+vendor/bin/hw/android.hardware.drm@1.1-service.widevine
+vendor/etc/init/android.hardware.drm@1.1-service.widevine.rc
+vendor/lib64/libwvhidl.so
 
 # Wi-Fi - from Wiko View 2
 vendor/bin/wcnss_service|940a486e18a86d53159fca50e4d97c2f4936e0cd
